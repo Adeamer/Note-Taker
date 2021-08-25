@@ -5,7 +5,7 @@ const htmlRoutes = require("./routes/htmlRoutes");
 
 //Setting up express app and the port
 const app = express();
-const PORT = process.env.port || 3001;
+const PORT = process.env.PORT || 3001;
 
 //Setting up express app to handle datat parsing
 app.use(express.urlencoded({ extended: true}));
