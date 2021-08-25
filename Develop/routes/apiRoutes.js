@@ -11,6 +11,12 @@ apiRoutes.get("/notes", (req, res) => {
     res.json(noteData);
 });
 
+apiRoutes.get("/notes/:id", (req, res) => {
+
+    res.json(data[Number(req.params.id)]);
+
+});
+
 //Post route for data going to db.json
 apiRoutes.post("/notes", (req, res) =>{
     console.log("we are in the post!")

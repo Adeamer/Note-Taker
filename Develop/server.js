@@ -5,17 +5,16 @@ const htmlRoutes = require("./routes/htmlRoutes");
 
 //Setting up express app and the port
 const app = express();
-const PORT = 3001;
-
-app.use("/api", apiRoutes);
-app.use("/", htmlRoutes);
-
-
+const PORT = process.env.port || 3001;
 
 //Setting up express app to handle datat parsing
 app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
 app.use(express.static("public"));
+
+// Route configuration
+app.use("/api", apiRoutes);
+app.use("/", htmlRoutes);
 
 // Listening for the port when the server is run in the terminal
 app.listen(PORT, () => {
